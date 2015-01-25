@@ -1,0 +1,59 @@
+
+- name: Checkout my dotfiles
+  git:
+    repo: git@bitbucket.org:aehata/dotfiles.git
+    dest: ~/.dotfiles
+    version: develop
+  tags:
+    - dotfiles
+    - mydotfiles
+
+- name: Create my dotfiles symlinks
+  file:
+    src: ~/.dotfiles/{{ item }}
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - .bash_profile
+    - .gitconfig
+    - .tmux.conf
+    - .gemrc
+    - .zsh
+    - .zshrc
+    - .zpreztorc
+  tags:
+    - dotfiles
+    - mydotfiles
+
+- name: Checkout anyenv
+  git:
+    repo: https://github.com/riywo/anyenv
+    dest: ~/.anyenv
+  tags:
+    - dotfiles
+    - anyenv
+
+- name: Checkout prezto
+  git:
+    repo: https://github.com/sorin-ionescu/prezto
+    dest: ~/.zprezto
+  tags:
+    - dotfiles
+    - prezto
+
+- name: Create prezto symlinks
+  file:
+    src: ~/.zprezto/runcoms/{{ item }}
+    dest: ~/.{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - zlogin
+    - zlogout
+    - zprofile
+    - zshenv
+  tags:
+    - dotfiles
+    - prezto
+

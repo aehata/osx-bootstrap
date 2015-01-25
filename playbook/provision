@@ -1,0 +1,25 @@
+#!/bin/bash
+
+INVENTORY="hosts"
+TAG_OPT=""
+
+usage_exit() {
+        echo "Usage: play [-i inventory] [-t tag]" 1>&2
+        exit 1
+}
+
+while getopts i:t:h OPT
+do
+    case $OPT in
+        i)  INVENTORY=$OPTARG
+            ;;
+        t)  TAG_OPT=" -t $OPTARG"
+            ;;
+        h)  usage_exit
+            ;;
+        \?) usage_exit
+            ;;
+    esac
+done
+
+ansible-playbook localhost.yml -i $INVENTORY$TAG_OPT

@@ -1,0 +1,124 @@
+---
+- name: Update homebrew
+  homebrew: update_homebrew=yes upgrade_all=yes
+  tags:
+    - brew
+    - brew_update
+
+- name: Tap homebrew repositories
+  homebrew_tap: tap={{ item }}
+  with_items:
+    - sanemat/font
+    - motemen/ghq
+    - peco/peco
+    - caskroom/cask
+    - caskroom/versions
+  tags:
+    - brew
+    - brew_tap
+
+- name: Install homebrew packages
+  homebrew: name={{ item.name }} install_options={{ item.options|default() }}
+  with_items:
+    - { name: 'autoconf' }
+    - { name: 'automake' }
+    - { name: 'pkg-config' }
+    - { name: 'coreutils' }
+    - { name: 'readline' }
+    - { name: 'openssl', state: linked }
+    - { name: 'tree' }
+    - { name: 'wget' }
+    - { name: 'htop' }
+    - { name: 'ack' }
+    - { name: 'nkf' }
+    - { name: 'pwgen' }
+
+    - { name: 'zsh' }
+    - { name: 'ctags' }
+    - { name: 'lua' }
+    - { name: 'vim', options: 'with-lua', 'override-system-vim' }
+    - { name: 'macvim', options: 'with-lua', 'override-system-vim' }
+
+    - { name: 'tmux' }
+    - { name: 'reattach-to-user-namespace' }
+
+    - { name: 'git' }
+    - { name: 'tig' }
+    - { name: 'gibo' }
+    - { name: 'peco' }
+    - { name: 'ghq' }
+
+    - { name: 'mackup' }
+    - { name: 'jq' }
+    - { name: 'awscli' }
+
+    - { name: 'brew-cask' }
+  tags:
+    - brew
+    - brew_pack
+
+- name: Install homebrew cask packages
+  homebrew_cask: name={{ item }}
+  with_items:
+    - virtualbox
+    - vagrant
+    - google-chrome
+    - firefox-ja
+    - alfred
+    - dropbox
+    - slack
+    - iterm2
+    - google-japanese-ime
+    - atom
+    - dash
+    - evernote
+    - sourcetree
+    - feeds
+    - vlc
+    - intellij-idea
+    - mysqlworkbench
+    - appcleaner
+    - airmail-beta
+    - skitch
+    - the-unarchiver
+    - tomighty
+    - cheatsheet
+    - cyberduck
+    - xquartz # for R, ricty font
+    - r
+  tags:
+    - brew
+    - brew_cask
+
+- name: Install homebrew packages required xquartz
+  homebrew: name={{ item.name }} install_options={{ item.options|default() }}
+  with_items:
+    - { name: 'ricty', options: 'vim-powerline' }
+    # $ cp -f /usr/local/Cellar/ricty/3.2.4/share/fonts/Ricty*.ttf ~/Library/Fonts/
+    # $ fc-cache -vf
+  tags:
+    - brew
+    - brew_font
+
+- name: check ricty version
+  shell: brew info ricty | grep "ricty:" | awk '{print $3;}'
+  register: ricty_version
+  changed_when: False
+  tags:
+    - brew
+    - brew_font
+
+- name: copy ricty font files
+  copy: src={{ item }} dest=~/Library/Fonts/ force=yes
+  with_fileglob:
+    - /usr/local/Cellar/ricty/{{ ricty_version.stdout }}/share/fonts/Ricty*.ttf
+  tags:
+    - brew
+    - brew_font
+
+- name: update font cache
+  shell: fc-cache -vf
+  tags:
+    - brew
+    - brew_font
+
