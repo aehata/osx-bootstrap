@@ -4,7 +4,7 @@ INVENTORY="hosts"
 TAG_OPT=""
 
 usage_exit() {
-        echo "Usage: play [-i inventory] [-t tag]" 1>&2
+        echo "Usage: provision [-i inventory] [-t tag]" 1>&2
         exit 1
 }
 
