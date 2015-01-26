@@ -25,6 +25,7 @@
     - { name: 'pkg-config' }
     - { name: 'coreutils' }
     - { name: 'readline' }
+    - { name: 'mcrypt' }
     - { name: 'openssl', state: linked }
     - { name: 'tree' }
     - { name: 'wget' }

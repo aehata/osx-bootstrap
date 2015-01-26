@@ -22,4 +22,4 @@ do
     esac
 done
 
-ansible-playbook localhost.yml -i $INVENTORY$TAG_OPT
+ansible-playbook initialize.yml -i $INVENTORY$TAG_OPT

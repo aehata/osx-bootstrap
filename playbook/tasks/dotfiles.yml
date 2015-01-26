@@ -22,6 +22,8 @@
     - .zsh
     - .zshrc
     - .zpreztorc
+    - .vim
+    - .vimrc
   tags:
     - dotfiles
     - mydotfiles

@@ -1,0 +1,50 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: install {***}env
+      command: anyenv install {{item}} -f
+      with_items:
+        - rbenv
+        - ndenv
+        - phpenv
+        - pyenv
+      tags:
+        - anyenv
+
+    - name: install ruby
+      command: rbenv {{item}} 2.2.0
+      with_items:
+        - install -s
+        - global
+      tags:
+        - rbenv
+        - anyenv
+
+    - name: install php
+      command: phpenv {{item}} 5.6.5
+      with_items:
+        - install
+        - global
+      tags:
+        - phpenv
+        - anyenv
+
+    - name: install node
+      command: ndenv {{item}} v0.11.15
+      with_items:
+        - install
+        - global
+      tags:
+        - ndenv
+        - anyenv
+
+    - name: install python
+      command: pyenv {{item}} 3.4.2
+      with_items:
+        - install -s
+        - global
+      tags:
+        - pyenv
+        - anyenv
+
