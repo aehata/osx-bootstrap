@@ -36,6 +36,20 @@
     - dotfiles
     - anyenv
 
+- name: Prepare anyenv-update
+  command: mkdir -p ~/.anyenv/plugins
+  tags:
+    - dotfiles
+    - anyenv
+
+- name: Checkout anyenv-update
+  git:
+    repo: https://github.com/znz/anyenv-update
+    dest: ~/.anyenv/plugins/anyenv-update
+  tags:
+    - dotfiles
+    - anyenv
+
 - name: Checkout prezto
   git:
     repo: https://github.com/sorin-ionescu/prezto
