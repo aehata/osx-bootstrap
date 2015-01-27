@@ -52,6 +52,7 @@
     - { name: 'mackup' }
     - { name: 'jq' }
     - { name: 'awscli' }
+    - { name: 'heroku-toolbelt' }
 
     - { name: 'brew-cask' }
   tags:
