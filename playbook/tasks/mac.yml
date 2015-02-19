@@ -8,7 +8,7 @@
   tags:
     - mac
 
-- name: hide desktop icons 
+- name: hide desktop icons
   command: "defaults write com.apple.finder CreateDesktop false"
   changed_when: False
   tags:

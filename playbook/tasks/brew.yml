@@ -51,6 +51,7 @@
 
     - { name: 'mackup' }
     - { name: 'jq' }
+    - { name: 'android-sdk' }
     - { name: 'awscli' }
     - { name: 'heroku-toolbelt' }
 
