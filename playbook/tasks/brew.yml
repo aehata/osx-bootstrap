@@ -8,6 +8,7 @@
 - name: Tap homebrew repositories
   homebrew_tap: tap={{ item }}
   with_items:
+    - homebrew/dupes
     - sanemat/font
     - motemen/ghq
     - peco/peco
@@ -27,6 +28,7 @@
     - { name: 'readline' }
     - { name: 'mcrypt' }
     - { name: 'openssl', state: linked }
+    - { name: 'openssh', options: 'with-brewed-openssl,with-keychain-support' }
     - { name: 'tree' }
     - { name: 'wget' }
     - { name: 'htop' }
@@ -42,6 +44,10 @@
 
     - { name: 'tmux' }
     - { name: 'reattach-to-user-namespace' }
+
+    - { name: 'docker' }
+    - { name: 'boot2docker' }
+    - { name: 'fig' }
 
     - { name: 'git' }
     - { name: 'tig' }
