@@ -54,6 +54,10 @@
     - { name: 'gibo' }
     - { name: 'peco' }
     - { name: 'ghq' }
+    - { name: 'editorconfig' }
+    - { name: 'trash' }
+    - { name: 'watch' }
+    - { name: 'figlet' }
 
     - { name: 'mackup' }
     - { name: 'jq' }
@@ -95,6 +99,7 @@
     - cyberduck
     - xquartz # for R, ricty font
     - r
+    - kindle
   tags:
     - brew
     - brew_cask
