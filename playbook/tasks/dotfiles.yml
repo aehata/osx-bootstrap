@@ -3,7 +3,7 @@
   git:
     repo: git@bitbucket.org:aehata/dotfiles.git
     dest: ~/.dotfiles
-    version: develop
+    recursive: yes
   tags:
     - dotfiles
     - mydotfiles
