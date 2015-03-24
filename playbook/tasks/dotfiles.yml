@@ -50,14 +50,6 @@
     - dotfiles
     - anyenv
 
-- name: Checkout tukubai
-  git:
-    repo: https://github.com/usp-engineers-community/Open-usp-Tukubai.git
-    dest: ~/.tukubai
-  tags:
-    - dotfiles
-    - tukubai
-
 - name: Checkout prezto
   git:
     repo: https://github.com/sorin-ionescu/prezto
