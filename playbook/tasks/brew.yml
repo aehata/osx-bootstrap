@@ -82,7 +82,8 @@
     - dropbox
     - google-drive
     - slack
-    - goofy
+    #- goofy
+    - messenger
     - iterm2
     - karabiner
     - google-japanese-ime
@@ -101,7 +102,8 @@
     - tomighty
     - cheatsheet
     - cyberduck
-    - xquartz # for R, ricty font
+    #- openoffice
+    - xquartz
     - r
     - kindle
   tags:
@@ -112,8 +114,6 @@
   homebrew: name={{ item.name }} install_options={{ item.options|default() }}
   with_items:
     - { name: 'ricty', options: 'vim-powerline' }
-    # $ cp -f /usr/local/Cellar/ricty/3.2.4/share/fonts/Ricty*.ttf ~/Library/Fonts/
-    # $ fc-cache -vf
   tags:
     - brew
     - brew_font
