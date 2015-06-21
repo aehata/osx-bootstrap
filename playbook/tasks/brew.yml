@@ -106,6 +106,7 @@
     - xquartz
     - r
     - kindle
+    - flickr-uploadr
   tags:
     - brew
     - brew_cask
