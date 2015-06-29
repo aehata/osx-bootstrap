@@ -107,6 +107,7 @@
     - r
     - kindle
     - flickr-uploadr
+    - android-file-transfer
   tags:
     - brew
     - brew_cask
