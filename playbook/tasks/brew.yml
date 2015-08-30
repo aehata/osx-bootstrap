@@ -14,9 +14,11 @@
     - peco/peco
     - caskroom/cask
     - caskroom/versions
+    - caskroom/fonts
   tags:
     - brew
     - brew_tap
+    - brew_font
 
 - name: Install homebrew packages
   homebrew: name={{ item.name }} install_options={{ item.options|default() }}
@@ -108,30 +110,41 @@
     - kindle
     - flickr-uploadr
     - android-file-transfer
+    - adobe-reader
   tags:
     - brew
     - brew_cask
 
-- name: Install homebrew packages required xquartz
-  homebrew: name={{ item.name }} install_options={{ item.options|default() }}
+#- name: Install homebrew packages required xquartz
+  #homebrew: name={{ item.name }} install_options={{ item.options|default() }}
+  #with_items:
+    #- { name: 'ricty', options: 'vim-powerline' }
+  #tags:
+    #- brew
+    #- brew_font
+
+#- name: check ricty version
+  #shell: brew info ricty | grep "ricty:" | awk '{print $3;}'
+  #register: ricty_version
+  #changed_when: False
+  #tags:
+    #- brew
+    #- brew_font
+
+#- name: copy ricty font files
+  #copy: src={{ item }} dest=~/Library/Fonts/ force=yes
+  #with_fileglob:
+    #- /usr/local/Cellar/ricty/{{ ricty_version.stdout }}/share/fonts/Ricty*.ttf
+  #tags:
+    #- brew
+    #- brew_font
+
+- name: Install font packages
+  homebrew_cask: name={{ item }}
   with_items:
-    - { name: 'ricty', options: 'vim-powerline' }
-  tags:
-    - brew
-    - brew_font
-
-- name: check ricty version
-  shell: brew info ricty | grep "ricty:" | awk '{print $3;}'
-  register: ricty_version
-  changed_when: False
-  tags:
-    - brew
-    - brew_font
-
-- name: copy ricty font files
-  copy: src={{ item }} dest=~/Library/Fonts/ force=yes
-  with_fileglob:
-    - /usr/local/Cellar/ricty/{{ ricty_version.stdout }}/share/fonts/Ricty*.ttf
+    - font-ricty-diminished
+    - font-myrica
+    - font-myricam
   tags:
     - brew
     - brew_font
