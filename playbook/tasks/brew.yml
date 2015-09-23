@@ -66,6 +66,7 @@
     - { name: 'android-sdk' }
     - { name: 'awscli' }
     - { name: 'heroku-toolbelt' }
+    - { name: 'ffmpeg' }
 
     - { name: 'brew-cask' }
   tags:
@@ -111,6 +112,7 @@
     - flickr-uploadr
     - android-file-transfer
     - adobe-reader
+    - qfinder
   tags:
     - brew
     - brew_cask
