@@ -68,6 +68,8 @@
     - { name: 'heroku-toolbelt' }
     - { name: 'ffmpeg' }
 
+    - { name: 'graphviz' } # for PlantUML
+
     - { name: 'brew-cask' }
   tags:
     - brew
@@ -113,6 +115,8 @@
     - android-file-transfer
     - adobe-reader
     - qfinder
+    - kitematic
+    - java
   tags:
     - brew
     - brew_cask
