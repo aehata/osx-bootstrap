@@ -1,0 +1,157 @@
+---
+# trackpad
+- name: trackpad settings
+  osx_defaults:
+    domain: "{{ item.domain }}"
+    type: bool
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { domain: 'com.apple.AppleMultitouchTrackpad', key: 'Clicking', value: true }
+    - { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Clicking', value: true }
+    - { domain: 'com.apple.AppleMultitouchTrackpad', key: 'DragLock', value: true }
+    - { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'DragLock', value: true }
+    - { domain: 'com.apple.AppleMultitouchTrackpad', key: 'Dragging', value: true }
+    - { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Dragging', value: true }
+
+# dock
+- name: dock autohide set enable
+  osx_defaults:
+    domain: com.apple.dock
+    key: "{{ item }}"
+    type: bool
+    value: true
+  with_items:
+    - autohide      # 自動的に隠す
+    - magnification # 拡大機能ON
+    - showhidden
+
+- name: autohide-delay
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide-delay
+    type: float
+    value: 0
+
+- name: dock icon size
+  osx_defaults:
+    domain: com.apple.dock
+    type: int
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: 'tilesize', value: 35 }
+    - { key: 'largesize', value: 65 }
+
+# Finder以外のアプリを消す
+- name: Clear all persistent dock apps
+  command: defaults delete com.apple.dock persistent-apps
+  ignore_errors: yes
+
+- name: dock position
+  osx_defaults:
+    domain: com.apple.dock
+    key: orientation
+    type: string
+    value: left
+
+- name: restart dock
+  command: killall Dock
+  #ignore_errors: yes
+
+# finder
+- name: function key
+  osx_defaults:
+    domain: com.apple.finder
+    type: bool
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: 'AppleShowAllFiles', value: true }
+    - { key: 'CreateDesktop', value: false }
+    - { key: 'ShowStatusBar', value: true }
+    - { key: 'ShowPathbar', value: true }
+    - { key: 'ShowTabView', value: true }
+    - { key: 'PathBarRootAtHome', value: true }
+    - { key: '_FXShowPosixPathInTitle', value: true }
+    - { key: 'OpenWindowForNewRemovableDisk', value: true }
+
+# finder
+- name: finder default directory
+  osx_defaults:
+    domain: com.apple.finder
+    type: string
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: 'NewWindowTarget', value: 'PfHm' }                # デフォルトをホームに
+    - { key: 'NewWindowTargetPath', value: 'file://${HOME}/' } # デフォルトをホームに
+    - { key: 'FXPreferredViewStyle', value: 'clmv' }           # カラム表示
+
+- name: restart finder
+  command: killall Finder
+
+# clock
+- name: clock
+  osx_defaults:
+    domain: com.apple.menuextra.clock
+    type: string
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: 'DateFormat', value: 'M\\U6708d\\U65e5(EEE)  H:mm' } # 日付を表示
+
+# desktopservices
+- name: function key
+  osx_defaults:
+    domain: com.apple.desktopservices
+    type: bool
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: 'desktopservices', value: true } # ネットワークディスク上に.DS_Storeを作らない
+
+- name: key repeat
+  osx_defaults:
+    domain: -g
+    key: "{{ item.key }}"
+    type: int
+    value: "{{ item.value }}"
+  with_items:
+    - { key: 'InitialKeyRepeat', value: 13 }
+    - { key: 'KeyRepeat', value: 3 }
+
+- name: function key
+  osx_defaults:
+    domain: -g
+    type: bool
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: 'com.apple.keyboard.fnState', value: true }
+
+#- name: show battery percent
+  #osx_defaults:
+    #domain: com.apple.menuextra.battery
+    #key: ShowPercent
+    #type: bool
+    #value: true
+
+# スクリーンショットの影をなくす
+- name: disable screenshot shadow
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+
+# スクリーンショットが保存されるフォルダを変更
+- name: set screenshot directory
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: ~/Pictures
+
+- name: killall SystemUIServer
+  command: killall SystemUIServer

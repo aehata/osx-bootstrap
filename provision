@@ -1,14 +1,13 @@
 #!/bin/bash
 
-INVENTORY="hosts"
 TAG_OPT=""
 
 usage_exit() {
-        echo "Usage: provision [-i inventory] [-t tag]" 1>&2
+        echo "Usage: provision [-t tag]" 1>&2
         exit 1
 }
 
-while getopts i:t:h OPT
+while getopts t:h OPT
 do
     case $OPT in
         i)  INVENTORY=$OPTARG
@@ -22,4 +21,6 @@ do
     esac
 done
 
-ansible-playbook initialize.yml -i $INVENTORY$TAG_OPT
+HOMEBREW_CASK_OPTS="--appdir=/Applications"
+#echo $HOMEBREW_CASK_OPTS
+ansible-playbook local.yml -vv$TAG_OPT

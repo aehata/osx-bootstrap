@@ -1,4 +1,4 @@
-
+---
 - name: Checkout my dotfiles
   git:
     repo: git@bitbucket.org:aehata/dotfiles.git

@@ -1,0 +1,19 @@
+---
+homebrew_packages:
+  - autoconf
+  - automake
+  - awscli
+  - gibo
+  - git
+  - git-secrets
+  - heroku-toolbelt
+  - mas
+  - nkf
+  - reattach-to-user-namespace
+  - tig
+  - terraform
+  - terragrunt
+  - tmux
+  - tree
+  - wget
+  - zsh

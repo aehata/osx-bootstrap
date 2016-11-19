@@ -1,15 +1,11 @@
-
+---
 - name: Checkout Open-usp-Tukubai
   git:
     repo: https://github.com/usp-engineers-community/Open-usp-Tukubai.git
     dest: ~/.tukubai
-  tags:
-    - tukubai
 
 - name: prepare tukubai man directory
   file: path=/usr/local/share/open-usp-tukubai/devel state=directory #owner=root group=root mode=0755
-  tags:
-    - tukubai
 
 - name: symlink tukubai man directory
   file:
@@ -17,6 +13,3 @@
     dest: /usr/local/share/open-usp-tukubai/devel/man
     state: link
     force: yes
-  tags:
-    - tukubai
-

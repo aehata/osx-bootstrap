@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+  roles:
+    - { role: osx-defaults, tags: [osx-defaults]}
+    - { role: homebrew, tags: [homebrew]}
+    - { role: homebrew-cask, tags: [homebrew-cask]}
+    - { role: ricty, tags: [ricty]}
+    - { role: mas, tags: [mas]}
+    - { role: dotfiles, tags: [dotfiles]}
+    - { role: tukubai, tags: [tukubai]}
+  vars:
+    local_dotfiles_ripository: ''
