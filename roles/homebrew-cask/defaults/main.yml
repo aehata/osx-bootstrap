@@ -26,6 +26,7 @@ homebrew_cask_packages:
   - docker
   - dropbox
   - evernote
+  - firefox
   - flash-player
   - google-chrome
   - google-drive
