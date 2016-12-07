@@ -9,6 +9,7 @@ homebrew_packages:
   - heroku-toolbelt
   - mas
   - nkf
+  - packer
   - reattach-to-user-namespace
   - tig
   - terraform
