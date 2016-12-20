@@ -3,10 +3,12 @@ homebrew_packages:
   - autoconf
   - automake
   - awscli
+  - gdal
   - gibo
   - git
   - git-secrets
   - heroku-toolbelt
+  - jq
   - mas
   - nkf
   - packer
