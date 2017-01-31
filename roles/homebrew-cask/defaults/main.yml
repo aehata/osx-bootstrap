@@ -38,6 +38,8 @@ homebrew_cask_packages:
   - slack
   - sourcetree
   - the-unarchiver
+  - vagrant
+  - virtualbox
   - visual-studio-code
   - vlc
   - xquartz
