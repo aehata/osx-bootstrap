@@ -8,6 +8,7 @@
       - { id: 467939042, name: Growl }
       - { id: 475260933, name: HardwareGrowler }
       - { id: 409183694, name: Keynote }
+      - { id: 576338668, name: Leaf }
       - { id: 539883307, name: LINE }
       - { id: 935250717, name: MonthlyCal }
       - { id: 409203825, name: Numbers }
