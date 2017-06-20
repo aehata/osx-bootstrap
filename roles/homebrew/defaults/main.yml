@@ -7,7 +7,9 @@ homebrew_packages:
   - gibo
   - git
   - git-secrets
+  - gnupg2
   - go
+  - graphviz
   - heroku-toolbelt
   - jq
   - mas
