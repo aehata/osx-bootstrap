@@ -13,7 +13,7 @@ homebrew_cask_repositories:
 # state choices: [present, absent, installed, uninstalled] (default: present)
 homebrew_cask_packages:
   - alfred
-  - adobe-reader
+  - adobe-acrobat-reader
   - airmail-beta
   - android-file-transfer
   - appcleaner
