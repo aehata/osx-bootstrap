@@ -50,6 +50,20 @@
     - dotfiles
     - anyenv
 
+- name: Install pyenv
+  command: anyenv install pyenv --skip-existing
+  tags:
+    - dotfiles
+    - anyenv
+
+- name: Checkout pyenv-virtualenv
+  git:
+    repo: https://github.com/yyuu/pyenv-virtualenv
+    dest: ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenv
+  tags:
+    - dotfiles
+    - anyenv
+
 - name: Checkout prezto
   git:
     repo: https://github.com/sorin-ionescu/prezto
