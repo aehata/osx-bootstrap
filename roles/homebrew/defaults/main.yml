@@ -8,6 +8,7 @@ homebrew_packages:
   - gdal
   - gibo
   - git
+  - git-flow-avh
   - git-secrets
   - gnupg2
   - go
