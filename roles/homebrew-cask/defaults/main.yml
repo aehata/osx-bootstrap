@@ -28,8 +28,8 @@ homebrew_cask_packages:
   - evernote
   - firefox
   - flash-player
+  - google-backup-and-sync
   - google-chrome
-  - google-drive
   - google-japanese-ime
   - iterm2
   - java
