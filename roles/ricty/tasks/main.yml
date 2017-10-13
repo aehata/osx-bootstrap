@@ -9,14 +9,10 @@
   with_items:
     - { name: 'ricty', options: ['vim-powerline', 'powerline'] }
 
-- name: check ricty version
-  shell: brew info ricty | grep "ricty:" | awk '{print $3;}'
-  register: ricty_version
-
 - name: copy ricty font files
   copy: src={{ item }} dest=~/Library/Fonts/ force=yes
   with_fileglob:
-    - /usr/local/Cellar/ricty/{{ ricty_version.stdout }}/share/fonts/Ricty*.ttf
+    - /usr/local/opt/ricty/share/fonts/Ricty*.ttf
 
 - name: update font cache
   shell: fc-cache -vf
