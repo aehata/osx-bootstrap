@@ -20,7 +20,6 @@ homebrew_cask_packages:
   - atom
   - box-sync
   - cheatsheet
-  - cmd-eikana
   - cyberduck
   - dash
   - docker
@@ -33,6 +32,7 @@ homebrew_cask_packages:
   - google-japanese-ime
   - iterm2
   - java
+  - karabiner-elements
   - kindle
   - kitematic
   - ngrok
