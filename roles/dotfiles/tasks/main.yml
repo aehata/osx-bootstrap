@@ -1,7 +1,7 @@
 ---
 - name: Checkout my dotfiles
   git:
-    repo: git@bitbucket.org:aehata/dotfiles.git
+    repo: https://github.com/aehata/dotfiles.git
     dest: ~/.dotfiles
     recursive: yes
   tags:
@@ -17,12 +17,10 @@
   with_items:
     - .bash_profile
     - .gitconfig
-    - .tmux.conf
     - .gemrc
     - .zsh
     - .zshrc
     - .zpreztorc
-    - .vim
     - .vimrc
   tags:
     - dotfiles
@@ -50,19 +48,19 @@
     - dotfiles
     - anyenv
 
-- name: Install pyenv
-  command: anyenv install pyenv --skip-existing
-  tags:
-    - dotfiles
-    - anyenv
+#- name: Install pyenv
+  #command: anyenv install pyenv --skip-existing
+  #tags:
+    #- dotfiles
+    #- anyenv
 
-- name: Checkout pyenv-virtualenv
-  git:
-    repo: https://github.com/yyuu/pyenv-virtualenv
-    dest: ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenv
-  tags:
-    - dotfiles
-    - anyenv
+#- name: Checkout pyenv-virtualenv
+  #git:
+    #repo: https://github.com/yyuu/pyenv-virtualenv
+    #dest: ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenv
+  #tags:
+    #- dotfiles
+    #- anyenv
 
 - name: Checkout prezto
   git:

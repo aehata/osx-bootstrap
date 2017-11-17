@@ -1,18 +1,18 @@
 ---
 # trackpad
-- name: trackpad settings
-  osx_defaults:
-    domain: "{{ item.domain }}"
-    type: bool
-    key: "{{ item.key }}"
-    value: "{{ item.value }}"
-  with_items:
-    - { domain: 'com.apple.AppleMultitouchTrackpad', key: 'Clicking', value: true }
-    - { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Clicking', value: true }
-    - { domain: 'com.apple.AppleMultitouchTrackpad', key: 'DragLock', value: true }
-    - { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'DragLock', value: true }
-    - { domain: 'com.apple.AppleMultitouchTrackpad', key: 'Dragging', value: true }
-    - { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Dragging', value: true }
+#- name: trackpad settings
+  #osx_defaults:
+    #domain: "{{ item.domain }}"
+    #type: bool
+    #key: "{{ item.key }}"
+    #value: "{{ item.value }}"
+  #with_items:
+    #- { domain: 'com.apple.AppleMultitouchTrackpad', key: 'Clicking', value: 1 }
+    #- { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Clicking', value: 1 }
+    #- { domain: 'com.apple.AppleMultitouchTrackpad', key: 'DragLock', value: 1 }
+    #- { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'DragLock', value: 1 }
+    #- { domain: 'com.apple.AppleMultitouchTrackpad', key: 'Dragging', value: 1 }
+    #- { domain: 'com.apple.driver.AppleBluetoothMultitouch.trackpad', key: 'Dragging', value: 1 }
 
 # dock
 - name: dock autohide set enable
@@ -130,12 +130,12 @@
   with_items:
     - { key: 'com.apple.keyboard.fnState', value: true }
 
-#- name: show battery percent
-  #osx_defaults:
-    #domain: com.apple.menuextra.battery
-    #key: ShowPercent
-    #type: bool
-    #value: true
+- name: show battery percent
+  osx_defaults:
+    domain: com.apple.menuextra.battery
+    key: ShowPercent
+    type: bool
+    value: true
 
 # スクリーンショットの影をなくす
 - name: disable screenshot shadow
