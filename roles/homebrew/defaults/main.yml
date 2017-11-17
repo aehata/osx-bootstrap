@@ -28,4 +28,5 @@ homebrew_packages:
   - tmux
   - tree
   - wget
+  - yarn
   - zsh
