@@ -8,9 +8,10 @@ homebrew_packages:
   - certbot
   - direnv
   - ffmpeg
+  - {name: fontforge, install_options: [use-gcc, without-python]}
   - gdal
   - gibo
-  - git
+  - {name: git, install_options: [with-brewed-curl, with-brewed-openssl]}
   - git-flow-avh
   - git-secrets
   - gnupg2
@@ -19,16 +20,19 @@ homebrew_packages:
   - heroku-toolbelt
   - hugo
   - jq
+  - lua
   - mas
   - nkf
   - openvpn
   - packer
+  - plantuml
   - reattach-to-user-namespace
   - tig
   - terraform
   - terragrunt
   - tmux
   - tree
+  - {name: vim, install_options: [with-cscope, with-lua, override-system-vim]}
   - wget
   - yarn
   - zsh

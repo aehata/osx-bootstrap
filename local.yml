@@ -7,7 +7,7 @@
     - { role: osx-defaults, tags: [osx-defaults]}
     - { role: homebrew, tags: [homebrew]}
     - { role: homebrew-cask, tags: [homebrew-cask]}
-    - { role: ricty, tags: [ricty]}
+    - { role: font, tags: [font]}
     - { role: mas, tags: [mas]}
     - { role: dotfiles, tags: [dotfiles]}
     - { role: tukubai, tags: [tukubai]}
