@@ -12,6 +12,7 @@ homebrew_packages:
   - gdal
   - gibo
   - {name: git, install_options: [with-brewed-curl, with-brewed-openssl]}
+  - git-crypt
   - git-flow-avh
   - git-secrets
   - gnupg2
