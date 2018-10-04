@@ -6,12 +6,14 @@ homebrew_packages:
   - automake
   - awscli
   - certbot
+  - circleci
   - direnv
   - ffmpeg
   - {name: fontforge, install_options: [use-gcc, without-python]}
   - gdal
   - gibo
   - {name: git, install_options: [with-brewed-curl, with-brewed-openssl]}
+  - gitup
   - git-crypt
   - git-flow-avh
   - git-secrets

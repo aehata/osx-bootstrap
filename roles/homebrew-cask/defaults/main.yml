@@ -1,8 +1,4 @@
 ---
-# Tap external Homebrew Cask repositories.
-homebrew_cask_repositories:
-  - caskroom/versions
-
 # Managed Homebrew Cask packages.
 #
 # e.g.
@@ -15,6 +11,7 @@ homebrew_cask_packages:
   - alfred
   - adobe-acrobat-reader
   - airmail-beta
+  - amazon-chime
   - android-file-transfer
   - appcleaner
   - atom
@@ -38,6 +35,7 @@ homebrew_cask_packages:
   - ngrok
   - slack
   - sourcetree
+  - tableau-reader
   - the-unarchiver
   - vagrant
   - virtualbox
