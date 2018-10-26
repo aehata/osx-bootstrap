@@ -28,6 +28,8 @@ homebrew_packages:
   - nkf
   - openvpn
   - packer
+  - pandoc
+  - pipenv
   - plantuml
   - reattach-to-user-namespace
   - tig

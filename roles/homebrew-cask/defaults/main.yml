@@ -38,6 +38,7 @@ homebrew_cask_packages:
   - sourcetree
   - tableau-reader
   - the-unarchiver
+  - typora
   - vagrant
   - virtualbox
   - visual-studio-code
