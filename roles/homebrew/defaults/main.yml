@@ -9,6 +9,7 @@ homebrew_packages:
   - circleci
   - direnv
   - ffmpeg
+  - fzy
   - {name: fontforge, install_options: [use-gcc, without-python]}
   - gdal
   - gibo
@@ -20,7 +21,6 @@ homebrew_packages:
   - gnupg2
   - go
   - graphviz
-  - heroku-toolbelt
   - hugo
   - jq
   - lua
@@ -37,7 +37,8 @@ homebrew_packages:
   - terragrunt
   - tmux
   - tree
-  - {name: vim, install_options: [with-cscope, with-lua, override-system-vim]}
+  - {name: vim, install_options: [with-lua, override-system-vim]}
   - wget
   - yarn
+  - zplug
   - zsh
