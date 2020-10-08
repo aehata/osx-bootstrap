@@ -1,0 +1,15 @@
+---
+
+- name: MAS is installed
+  shell: brew list
+  register: mas_brew_list
+  changed_when: False
+  tags:
+    - brew
+
+- block:
+
+    - name: brew bundle
+      shell: brew bundle
+
+  when: '"mas" in mas_brew_list.stdout_lines'

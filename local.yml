@@ -5,11 +5,7 @@
   become: no
   roles:
     - { role: osx-defaults, tags: [osx-defaults]}
-    - { role: homebrew, tags: [homebrew]}
-    - { role: homebrew-cask, tags: [homebrew-cask]}
-    - { role: font, tags: [font]}
-    - { role: mas, tags: [mas]}
+    - { role: brew, tags: [brew]}
     - { role: dotfiles, tags: [dotfiles]}
-    - { role: tukubai, tags: [tukubai]}
   vars:
     local_dotfiles_ripository: ''
