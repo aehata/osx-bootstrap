@@ -35,7 +35,6 @@ brew "zsh"
 tap "sanemat/font"
 brew "ricty", args: ["with-powerline"]
 
-cask "1password6"
 cask "1password-cli"
 cask "adobe-acrobat-reader"
 cask "alfred"
@@ -50,6 +49,7 @@ cask "discord"
 cask "docker"
 cask "dropbox"
 cask "firefox"
+cask "fliqlo"
 cask "google-chrome"
 cask "google-drive-file-stream"
 cask "google-japanese-ime"
@@ -70,6 +70,7 @@ cask "zoomus"
 cask "xmind"
 cask "xquartz"
 
+mas "1Password", id: 443987910
 mas "Alinof-Timer", id: 512464723
 mas "Be Focused Pro", id: 961632517
 mas "BetterSnapTool", id: 417375580
