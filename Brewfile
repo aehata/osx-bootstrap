@@ -60,7 +60,6 @@ cask "homebrew/cask-drivers/logitech-options"
 cask "microsoft-edge"
 cask "ngrok"
 cask "notion"
-cask "sequel-pro"
 cask "steam"
 cask "vagrant"
 cask "virtualbox"
@@ -84,6 +83,7 @@ mas "Pixelmator", id: 407963104
 mas "Popclip", id: 445189367
 mas "Pocket", id: 568494494
 mas "RunCat", id: 1429033973
+mas "Sequel Ace", id: 1518036000
 mas "Skitch", id: 425955336
 mas "Slack", id: 803453959
 mas "The Unarchiver", id: 425424353
