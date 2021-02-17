@@ -65,7 +65,7 @@ cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
-cask "zoomus"
+cask "zoom"
 cask "xmind"
 cask "xquartz"
 
