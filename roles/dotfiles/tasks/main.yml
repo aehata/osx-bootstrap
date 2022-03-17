@@ -51,3 +51,11 @@
     - dotfiles
     - prezto
 
+- name: Checkout anyenv-update
+  git:
+    repo: https://github.com/znz/anyenv-update.git
+    dest: ~/.anyenv/plugins/anyenv-update
+  tags:
+    - dotfiles
+    - anyenv
+
